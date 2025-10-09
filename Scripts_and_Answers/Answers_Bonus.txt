@@ -1,0 +1,32 @@
+1. 4,458
+
+2. 
+	a. "LEVOTHYROXINE SODIUM", "LISINOPRIL", "ATORVASTATIN CALCIUM", "AMLODIPINE BESYLATE", "OMEPRAZOLE"
+	b. "ATORVASTATIN CALCIUM", "CARVEDILOL", "METOPROLOL TARTRATE", "CLOPIDOGREL BISULFATE", "AMLODIPINE BESYLATE"
+	c. "AMLODIPINE BESYLATE", "ATORVASTATIN CALCIUM"
+
+
+3. 
+	a. 
+		| npi        | total_claim_sum |
+		| ---------- | --------------- |
+		| 1538103692 |		53,622 |
+		| 1497893556 |		29,929 |
+		| 1659331924 |		26,013 |
+		| 1881638971 |		25,511 |
+		| 1962499582 |		23,703 |
+	b.
+		| npi        | total_claim_sum |
+		| ---------- | --------------- |
+		| 1346291432 |		65,659 |
+		| 1225056872 |		62,301 |
+		| 1801896881 |		40,169 |
+		| 1669470316 |		39,491 |
+		| 1275601346 |		36,190 |
+	c. See script file
+
+4. See script file
+
+5. 
+	a. 6,597,381
+	b. See script file

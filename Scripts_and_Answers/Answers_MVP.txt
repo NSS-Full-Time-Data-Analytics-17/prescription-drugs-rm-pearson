@@ -1,0 +1,40 @@
+1.
+	a. Prescriber 1881634483 had the highest total number of claims, with 99,707 claims across all drugs.
+	b. Bruce Pendley, Family Practice, with 99,707 claims
+
+2.
+	a. Family Practice is the specialty with the most total claims at 9,752,347
+	b. The Nurse Practitioner speciality had the most claims for opioids, with 900,845 claims
+	c. There are 15 specialties that appear in the prescriber table but do not have prescriptions listed in the prescriptions table.
+	d. Specialties with a high percentage of opioid prescriptions (over 50%):
+		| Specialty                      | Opioid_perc |
+		| ------------------------------ | -------     |
+		| Case Manager/Care Coordinator  | 72 %        |
+		| Orthopaedic Surgery            | 68.98 %     |
+		| Interventional Pain Management | 60.89 %     |
+		| Pain Management                | 59.45 %     |
+		| Anesthesiology                 | 59.32 %     |
+		| Hand Surgery                   | 56.07 %     |
+		| Surgical Oncology              | 54.79 %     |
+
+
+3. 
+	a. "INSULIN GLARGINE,HUM.REC.ANLOG"
+	b. "C1 ESTERASE INHIBITOR"
+
+4.
+	a. (see script file)
+	b. More was spent on opioids than antibiotics
+
+5.
+	a. There are 10 CBSAs in Tennessee
+	b. Largest: "Nashville-Davidson--Murfreesboro--Franklin, TN" - 1,830,410
+	   Smallest: "Morristown, TN" - 116,352 (however there are almost 400 CBSAs with no recorded pouplation information
+	c. Sevier, TN is the largest county not included in a CBSA, with a population of 95,523
+
+
+6.
+	a/b/c - See script file
+
+7.
+	a/b/c - See script file
