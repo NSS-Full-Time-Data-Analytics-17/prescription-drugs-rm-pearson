@@ -9,6 +9,7 @@ LIMIT 1
 
 -- 1.b. Repeat the above, but this time report the nppes_provider_first_name, nppes_provider_last_org_name,  specialty_description, and the total number of claims.
 
+
 SELECT nppes_provider_first_name, nppes_provider_last_org_name, specialty_description, total_claims_sum
 FROM prescriber
 	 INNER JOIN (SELECT npi, SUM(total_claim_count) AS total_claims_sum
@@ -16,6 +17,14 @@ FROM prescriber
 				GROUP BY npi ORDER BY total_claims_sum DESC LIMIT 1
 				)
 				USING(npi)
+;
+
+--Alternate from instructor. Works because first/last/specialty is likely to be unique (but technically not guaranteed)
+SELECT nppes_provider_first_name, nppes_provider_last_org_name, specialty_description, SUM(total_claim_count) AS total_claims_sum
+FROM prescription INNER JOIN prescriber USING(npi)
+GROUP BY nppes_provider_first_name, nppes_provider_last_org_name, specialty_description
+ORDER BY total_claims_sum DESC
+LIMIT 1
 ;
 
 
@@ -47,6 +56,16 @@ GROUP BY specialty_description
 	HAVING SUM(total_claim_count) IS NULL
 ;
 
+--Alternate from instructor:
+
+SELECT specialty_description
+FROM prescriber
+
+EXCEPT
+
+SELECT specialty_description
+FROM prescription INNER JOIN prescriber USING(npi)
+;
 
 --2.d. **Difficult Bonus:** *Do not attempt until you have solved all other problems!* For each specialty, 
 	-- report the percentage of total claims by that specialty which are for opioids. Which specialties have a high percentage of opioids?
@@ -61,6 +80,19 @@ FROM
 	FROM prescription LEFT JOIN drug USING(drug_name)
 					  FULL JOIN prescriber USING(npi)
 	)
+GROUP BY specialty_description
+ORDER BY opioid_perc DESC NULLS LAST
+;
+
+--Alternate from instructor:
+
+SELECT specialty_description,
+		ROUND(
+			(SUM(CASE WHEN opioid_drug_flag = 'Y' THEN total_claim_count ELSE 0 END) * 100 )
+			/ SUM(total_claim_count), 
+		2) AS opioid_perc
+FROM prescription INNER JOIN prescriber USING(npi)
+				  INNER JOIN drug USING(drug_name)
 GROUP BY specialty_description
 ORDER BY opioid_perc DESC NULLS LAST
 ;
